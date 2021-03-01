@@ -1,0 +1,154 @@
+.main_box{
+margin-left: 32.9%;
+color: white;
+width: 660px;
+height: 480px;
+display: inline-block;
+background:rgba(31, 32, 38, 0.9);
+border-right: 6px;
+box-shadow: 0 5px 35px rgba(0,0,0,0.5);
+margin-bottom: 15px;
+margin-top: 15px;
+}
+
+
+.section_cercle{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 320px;
+  margin-left: 50%;
+  margin-right: 50%;
+  background: #042104;
+  animation: cercle_animation 10s linear infinite;
+}
+
+@keyframes cercle_animation
+{
+  0%
+  {
+    filter: hue-rotate(0deg);
+  }
+  100%
+  {
+    filter: hue-rotate(360deg);
+  }
+}
+
+.cercle_effect{
+  position: relative;
+  height: 200px;
+  width: 200px;
+
+}
+.section_cercle .cercle_effect span{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(calc(18deg * var(--i)));
+}
+.section_cercle .cercle_effect span::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #00ff0a;
+  box-shadow: 0 0 10px #00ff0a,
+              0 0 20px #00ff0a,
+              0 0 40px #00ff0a,
+              0 0 60px #00ff0a,
+              0 0 80px #00ff0a,
+              0 0 100px #00ff0a;
+animation: cercle_scale 2s linear infinite;
+animation-delay: calc(0.1s * var(--i));
+}
+@keyframes cercle_scale
+{
+ 0%
+ {
+   transform: scale(1);
+ }
+ 80%,100%
+ {
+   transform: scale(0)
+ }
+}
+
+
+
+.gg{
+background:white;
+}
+
+
+.content-article {
+  background: #ffffff;
+  padding: 10px 20px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+.h2_heading_title {
+  color: #2399f0;
+  text-decoration:none; 
+}
+
+a.h2_heading_title:hover {
+  color: #0f84dc;
+  text-decoration: none;
+}
+a.mr-2{
+  text-decoration:none;
+  color:white;
+}
+
+.post {
+  white-space: pre-line;
+}
+
+.article-img {
+  height: 65px;
+  width: 65px;
+  margin-right: 16px;
+}
+
+.main_box_content {
+  padding-bottom: 1px;
+  margin-bottom: 4px;
+}
+
+.main_box_content a:hover {
+  color: #2399f0;
+  text-decoration: none;
+}
+
+.article-svg {
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+}
+
+.account-img {
+  height: 125px;
+  width: 125px;
+  margin-right: 20px;
+  margin-bottom: 16px;
+}
+
+.home_login_alert{
+width: 660px;
+height: 20px;
+margin-left:32.9%;
+background-color:rgb(0 255 57 / 61%);
+
+padding-top:5px;
+padding-bottom:5px;
+text-align:center;
+font-family: 'Noto Sans', sans-serif;
+}

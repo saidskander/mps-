@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>MPS</title>
+  <!-- <link rel="stylesheet" href="../styles/login.css">-->
+  <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+</head>
+
+{% block content %}
+<body class="loggin">
+ <section>
+  <div class="box">
+    <div class="loggin_box">
+      <img class="mps_loggin" src="../static/img/m.png" alt="user">
+      <h2>Register</h2>
+
+      <form class="#" action="register" method="POST">
+
+<!--
+NOTE ..!! the reason of POST 404 err is because the action inside form tag was bad spelling.. 
+I added .html [action="register.html"] and
+it should be [action="register"] without adding ".html"
+Pffffff >_<
+-->
+
+          {{ form.hidden_tag() }}
+
+        <div class="input_loggin_box">
+          {# {{ form.email }} #}
+
+          <label>{{ form.email(placeholder="Email") }}<!--<input type="text" placeholder="Email" name="Email" value="">--></label>
+        {% if form.email.errors %}
+        <div class="Field_is_not_matching">
+        {% for error in form.email.errors %}
+         <span>{{ error }}<span>
+        {% endfor %}
+        </div>
+        {% else %}
+        {{ email }}
+        {% endif %}
+
+        <img class="user_lock_png" src="../static/img/user.png" alt="user">
+        </div>
+
+
+        <div class="input_loggin_box">
+          {# {{ form.username }} #}
+          
+         <label>{{ form.username(placeholder="Username") }}</label>
+       
+        {% if form.username.errors %}
+        <div class="Field_is_not_matching">
+        {% for error in form.username.errors %}
+         <span>{{ error }}<span>
+        {% endfor %}
+        </div>
+	{% else %}
+        {{ username }}
+	{% endif %}
+	
+         <img class="user_lock_png" src="../static/img/user.png" alt="user">
+        </div>
+
+        <div class="input_loggin_box">
+          {# {{ form.password }} #}
+          <label >{{ form.password(placeholder="Password") }}<!--<input class="lock" type="password" placeholder="Password" name="username" value="">--></label>
+
+        {% if form.password.errors %}
+        <div class="Field_is_not_matching">
+        {% for error in form.password.errors %}
+         <span>{{ error }}<span>
+        {% endfor %}
+        </div>
+        {% else %}
+        {{ password }}
+        {% endif %}
+          <img class="user_lock_png" src="{{ url_for('static', filename='img/lock.png') }}">
+
+<!--          <img class="user_lock_png" src="../static/img/lock.png" alt="lock">-->
+        </div>
+
+        <div class="input_loggin_box">
+          {# {{ form.confirm_passwd }} #}
+          <label>{{ form.confirm_passwd(placeholder="Confirm password") }}<!--<input class="lock" type="password" placeholder="Confirm password" name="username" value=""></label>-->
+
+        {% if form.confirm_passwd.errors %}
+        <div class="Field_is_not_matching">
+        {% for error in form.confirm_passwd.errors %}
+         <span>{{ error }}<span>
+        {% endfor %}
+        </div>
+        {% else %}
+        {{ confirm_passwd }}
+        {% endif %}
+
+
+
+          <img class="user_lock_png" src="{{ url_for('static', filename='img/lock.png') }}">
+
+<!--          <img class="user_lock_png" src="../static/img/lock.png" alt="lock">-->
+        </div>
+
+<!--        <label class="remember_me"><input type="checkbox"> Remember me</label>-->
+        <div class="input_loggin_box">
+
+   {{ form.submit }} <!-- <input type="submit" value="Submit">--> 
+        </div>
+
+        <p>Already have an <a href="{{ url_for('login') }}">Account?</a></p>
+
+      </form>
+
+    </div>
+  </div>
+ </section>
+
+</body>
+{% endblock content %}
+</html>

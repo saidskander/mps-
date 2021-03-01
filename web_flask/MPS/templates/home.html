@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+{% block content %}
+<section class="section_cercle">
+  <div class="cercle_effect">
+    <span style="--i:1;"></span>
+    <span style="--i:2;"></span>
+    <span style="--i:3;"></span>
+    <span style="--i:4;"></span>
+    <span style="--i:5;"></span>
+    <span style="--i:6;"></span>
+    <span style="--i:7;"></span>
+    <span style="--i:8;"></span>
+    <span style="--i:9;"></span>
+    <span style="--i:10;"></span>
+    <span style="--i:11;"></span>
+    <span style="--i:12;"></span>
+    <span style="--i:13;"></span>
+    <span style="--i:14;"></span>
+    <span style="--i:15;"></span>
+    <span style="--i:16;"></span>
+    <span style="--i:17;"></span>
+    <span style="--i:18;"></span>
+    <span style="--i:19;"></span>
+    <span style="--i:20;"></span>
+    </div>
+</section>
+{% for post in posts %}        
+        <article class="main_box">
+          <!--content-article-->
+          <!--<div class="main_box">-->
+            
+            <div class="main_box_content">
+              <a class="mr-2" href="#">{{ post.author }}</a>
+              <small class="text-muted">{{ post.date_posted }}</small>
+            </div>
+            <h2><a class="h2_heading_title" href="#">{{ post.title }}</a></h2>
+            <p class="post">{{ post.content }}</p>
+         <!--</div>-->
+        </article>
+    {% endfor %}
+{% endblock content %}

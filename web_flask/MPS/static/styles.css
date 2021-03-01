@@ -1,0 +1,132 @@
+* {
+ margin: 0;
+ padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+main {
+  /*min-height: 100%;*/
+  /*background-color: #EFF3F6;*/
+  background-color: rgba(24, 25, 26, 1);
+  min-height: calc(100vh  - 108px - 60px);
+
+}
+
+header {
+/*text-outline: input main //header;*/
+  overflow: auto;
+  padding-bottom: 0px;
+  background-color: rgb(31, 32, 38);
+display: flex;
+justify-content: space-between;
+/*text-outline: input image;*/
+/*text-outline: size and position;*/
+  background-position: 50px;
+  background-size: 5%;
+  margin: -20px 0;
+
+}
+.logo{
+  height: 100px;
+margin-left: 30px;
+margin-top: 3px;
+}
+.nav_links{
+  list-style: none;
+  padding: 0px;
+}
+.nav_links li{
+  display: inline-block;
+  margin-top: 40px;
+  padding: 0px;
+}
+li a{
+  font-family: sans-serif;
+  font-weight: 500;
+  font-size: 25px;
+  color: #2399F0;
+  text-decoration: none;
+margin: 60px;
+padding: 0px;
+}
+.menu{
+  font-size: 25px;
+  color: #2399F0;
+  margin: 40px;
+}
+.fa-search{
+  margin-top: 6px;
+  font-size: 10px;
+}
+#search-box {
+  position: absolute;
+  top: 5.2%;
+  left: 10%;
+  height: 18px;
+  /*hniii*/
+  margin: -15px 0;
+  padding: 10px;
+  border-radius: 40px;
+  border: 2px solid #2399F0;
+  /*text-outline: moving search box to the right + hover;*/
+  transform: translate(0%,-50%);
+  background-color: #222C3B;
+}
+
+.search-btn {
+  color: #2399F0;
+  float: right;
+  width: 20px;
+  height: 20px;
+
+  border-radius: 50%;
+  background-color: #222C3B;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: -5px;
+}
+
+.search-text {
+  border: none;
+  background: none;
+  outline: none;
+  float: left;
+  padding: 0;
+  color: rgba(175, 193, 241, 0.5);
+  font-size: 16px;
+  transition: 0.4s;
+  line-height: 40px;
+  width: 0px;
+  margin-top: -10px;
+}
+
+
+#search-box:hover{
+  border: 2px solid #2399F0;
+}
+
+#search-box:hover > .search-text{
+  width: 240px;
+  padding: 0px 6px;
+}
+
+#search-box:hover > .search-btn{
+background-color: #222C3B;
+}
+
+footer {
+  background-color: #222C3B;
+  position: relative;
+
+  height: 100px;
+  /* footer at the bottom without calc fun clear: both;*/
+
+
+}
+
+
