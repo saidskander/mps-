@@ -4,7 +4,8 @@ from wtforms import StringField, BooleanField
 from wtforms import PasswordField, SubmitField
 from wtforms.validators import DataRequired
 from wtforms.validators import Length, Email, EqualTo, email_validator
-from wtforms.validators import email
+from wtforms.validators import Email, ValidationError
+from MPS.models import User
 import email_validator
 
 
@@ -32,6 +33,18 @@ class RegistrationForm(FlaskForm):
                                                EqualTo("password")])
     """submit information"""
     submit = SubmitField("Sign Up")
+
+    """Username is taken"""
+    def validate_username(self, username):
+        user = User.query.filter_by(username=username.data).first()
+        if user:
+            raise ValidationError('Username is taken')
+
+    """Email taken"""
+    def validate_email(self, email):
+        user = User.query.filter_by(email=email.data).first()
+        if user:
+            raise ValidationError('Email is taken')
 
 
 class LoginForm(FlaskForm):

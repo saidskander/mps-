@@ -16,7 +16,7 @@ main {
 }
 
 header {
-/*text-outline: input main //header;*/
+/*text-outline: input main header;*/
   overflow: auto;
   padding-bottom: 0px;
   background-color: rgb(31, 32, 38);
@@ -29,10 +29,15 @@ justify-content: space-between;
   margin: -20px 0;
 
 }
+
 .logo{
   height: 100px;
 margin-left: 30px;
-margin-top: 3px;
+margin-top: 0px;
+}
+nav{
+  margin-right:  730px;
+  margin-top:-3px;
 }
 .nav_links{
   list-style: none;
@@ -52,18 +57,95 @@ li a{
 margin: 60px;
 padding: 0px;
 }
+
+
+
+.dropbtn {
+    background-color:#3aa2f0;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    margin-top:  25px;
+    left:95%;
+    position: absolute;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #1D1E25;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+.dropdown-content a:hover {
+background-color:rgba(89, 89, 110, 0.7);
+}
+
+.dropdown:hover .dropdown-content{
+display: block;
+}
+
+.dropdown:hover .dropbtn{
+background-color: rgba(58, 162, 240, 0.72);
+}
+
+
+/*
+
+ .menu_box{
+   background: pink;
+   text-decoration: none;
+  position: absolute;
+    display: inline-block;
+    margin: -35.5px 960px;
+    height: 152px;
+    width: 200px;
+    text-align: center;
+
+
+  }
+.dropdown{
+  padding:10px 0px;
+  height: 30px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+
+}
+
+.menubar{
+  height: 50px;
+  background-color: red;
+
+}
+
 .menu{
   font-size: 25px;
   color: #2399F0;
   margin: 40px;
-}
+}*/
 .fa-search{
   margin-top: 6px;
   font-size: 10px;
 }
 #search-box {
   position: absolute;
-  top: 5.2%;
+  top:4.6%;
   left: 10%;
   height: 18px;
   /*hniii*/

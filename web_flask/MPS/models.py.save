@@ -1,12 +1,13 @@
 #!/usr/bin/python3
 
 from datetime import datetime
-from MPS import db, login_manager
 from flask_login import UserMixin
+from MPS import db
+from MPSx import login_manager
 
 
 @login_manager.user_loader
-def load_user(user_id):
+def load_user(user_id, UserMixin):
     return User.query.get(int(user_id))
 
 
