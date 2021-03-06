@@ -41,7 +41,7 @@
         <div class="dropdown-content">
  <!--belek nzid nav fel login templates i duno-->
           {% if current_user.is_authenticated %}
-          <a href="#">Account</a>
+          <a href="{{ url_for('setting') }}">Settings</a>
           <a href="#">Policies</a>
           <a href="{{ url_for('logout') }}">Log out</a>
           {% else %}
