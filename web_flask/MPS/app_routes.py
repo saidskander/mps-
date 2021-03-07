@@ -75,9 +75,10 @@ def login():
             if user and bcrypt.check_password_hash(user.password,
                                                    form.password.data):
                 login_user(user, remember=form.remember.data)
-                next_page = request.args.get('next')
-                return redirect(next_page) if next_page else redirect(url_for
-                                                                      ("home"))
+                """Turnery condition cool i like it"""
+                samePage = request.args.get('next')
+                return redirect(samePage) if samePage else redirect(url_for
+                                                                    ("home"))
             else:
                 flash("wrong email or password")
     return render_template('login.html', title='Login', form=form)
