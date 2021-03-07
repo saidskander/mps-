@@ -25,8 +25,11 @@
     <div class="loggin_box">
       <img class="mps_loggin" src="../static/img/m.png" alt="user">
       <h2>Login</h2>
-
-      <form class="" action="login" method="POST">
+<!--
+ANOTHER BIG NOTE HERE .. IF I ADD THE attribute ACTION in form tag the next parametre query will never works.
+if many browsers needed i can add @login_manager.unauthorized_handler without ignoring the ACTION attribute
+-->
+      <form class="" method="POST">
 {{ form.hidden_tag() }}
         <div class="input_loggin_box">
           <label>{{ form.email(placeholder="Email") }}<!--<input type="text" placeholder="Email" name="Email" value="">--></label>
