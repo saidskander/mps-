@@ -97,3 +97,4 @@ def logout():
 @login_required
 def setting():
     return render_template('setting.html', title='Settings')
+
