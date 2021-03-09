@@ -29,7 +29,7 @@ posts = [
 @login_required
 def home():
     """there//"""
-    image_file = url_for('static', filename="profile_img/" current_user)
+    image_file = url_for('static', filename="profile_img/" + current_user.image_file)
     """there//"""
     return render_template('home.html', posts=posts, image_file=image_file)
 
