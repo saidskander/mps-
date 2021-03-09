@@ -1,3 +1,15 @@
+
+
+* {
+ margin: 0;
+ padding: 0;
+}
+
+html, body {
+  height: 100%;
+  background-color:#18191A;
+}
+
 h1{
   background-color: ;
   display: flex;
@@ -10,7 +22,7 @@ h1{
 margin-left: 32.9%;
 color: white;
 width: 660px;
-height: 311px;
+height: 320px;
 display: inline-block;
 background:rgba(31, 32, 38, 0.9);
 border-right: 6px;
@@ -23,7 +35,14 @@ border-bottom-left-radius:  25px;
 border-bottom-right-radius: 25px;
 border-bottom:  rgba(89, 89, 110, 0.7) solid 2px;
 }
-
+.side_settings_info{
+  color: rgba(89, 89, 110, 0.7);
+  margin-left: 10px;
+  margin-top: 2px;
+}
+.side_settings_info:hover{
+    color:  rgba(76, 76, 94, 1);
+}
 
 .Settings_main_box a{
 
@@ -40,7 +59,7 @@ border-top: rgba(89, 89, 110, 0.7) solid 2px;
 
 .Settings_main_box a:hover{
   color: #2399F0;
-  background-color:rgba(89, 89, 110, 0.7);
+  background-color:rgba(89, 89, 110, 0.3);
 
 }
 
@@ -48,3 +67,4 @@ border-top: rgba(89, 89, 110, 0.7) solid 2px;
   border-bottom-left-radius:  25px;
   border-bottom-right-radius: 25px;
 }
+

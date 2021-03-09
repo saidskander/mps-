@@ -11,7 +11,7 @@ main {
   /*min-height: 100%;*/
   /*background-color: #EFF3F6;*/
   background-color: rgba(24, 25, 26, 1);
-  min-height: calc(100vh  - 108px - 60px);
+  /*min-height: calc(100vh  - 108px - 60px);*/
 
 }
 
@@ -200,15 +200,15 @@ background-color: rgba(58, 162, 240, 0.72);
 #search-box:hover > .search-btn{
 background-color: #222C3B;
 }
-
+/*
 footer {
   background-color: #222C3B;
   position: relative;
 
-  height: 100px;
+  height: 100px;*/
   /* footer at the bottom without calc fun clear: both;*/
 
 
-}
+/*}*/
 
 
