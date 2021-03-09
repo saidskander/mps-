@@ -28,7 +28,11 @@ posts = [
 @app.route("/home")
 @login_required
 def home():
-    return render_template('home.html', posts=posts)
+    """there//"""
+    image_file = url_for('static', filename="profile_img/" current_user)
+    """there//"""
+    return render_template('home.html', posts=posts, image_file=image_file)
+
 
 
 @app.route("/world")
