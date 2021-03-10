@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-from MPS.forms import RegistrationForm, LoginForm, email_validator
+from MPS.forms import RegistrationForm, LoginForm, email_validator, UpdateEmailForm, UpdateUsernameForm
 from flask import render_template, url_for, flash, redirect, request
 from MPS.models import User, Post
 from wtforms.validators import email
@@ -102,3 +102,16 @@ def logout():
 def setting():
     return render_template('setting.html', title='Settings')
 
+
+@app.route("/email")
+@login_required
+def email():
+    form = UpdateEmailForm()
+    return render_template('email.html', title='Settings', form=form)
+
+
+@app.route("/username")
+@login_required
+def username():
+    form = UpdateUsernameForm()
+    return render_template('username.html', title='Settings', form=form)

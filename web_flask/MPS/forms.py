@@ -5,6 +5,7 @@ from wtforms import PasswordField, SubmitField
 from wtforms.validators import DataRequired
 from wtforms.validators import Length, Email, EqualTo, email_validator
 from wtforms.validators import Email, ValidationError
+from flask_login import current_user
 from MPS.models import User
 import email_validator
 
@@ -65,3 +66,30 @@ class LoginForm(FlaskForm):
 
     """allow users to stay login using a Secure cookie """
     remember = BooleanField('Remember Me')
+
+
+class UpdateEmailForm(FlaskForm):
+    email = StringField('Email',
+                        validators=[DataRequired(),
+                                    Email()])
+
+    submit = SubmitField("Update")
+
+    def validate_email(self, email):
+        if email.data != current_user.email:
+            user = User.query.filter_by(email=email.data).first()
+            if user:
+                raise ValidationError('Email is taken')
+
+
+class UpdateUsernameForm(FlaskForm):
+    username = StringField('Username',
+                           validators=[DataRequired(),
+                                       Length(min=3,
+                                       max=22)])
+    submit = SubmitField("Update")
+
+    def validate_username(self, username):
+        user = User.query.filter_by(username=username.data).first()
+        if user:
+            raise ValidationError('Username is taken')
