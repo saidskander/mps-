@@ -9,6 +9,7 @@
   <title>MPS</title>
   {% endif %}
 <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{ url_for('static', filename='update_account.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='setting.css') }}">
@@ -39,7 +40,7 @@
 <!--    <a class="menu" href="#"><i class="fas fa-bars"></i></a>-->
 
       <div class="dropdown" style="float:right;">
-        <button class="dropbtn">Right</button>
+        <button class="dropbtn">Drop</button>
         <div class="dropdown-content">
  <!--belek nzid nav fel login templates i duno-->
           {% if current_user.is_authenticated %}
@@ -72,14 +73,13 @@
   </header>
 
 <main>
-    <div class="Settings_main_box">
-      <h1>Email</h1>
-<div>
-  <div class="loggin_box">
+    <div class="update_main_box">
+      <h1>Email  Update</h1>
+  <div class="update_box">
 
-<p class="hover_border" href="#">Your email adress<p class="side_settings_info">{{ current_user.email }}</p></p>
+<p class="current_email_adress">Your current email adress is: <p2 class="current_settings_info"> {{ current_user.email }}</p2> </p>
 
-      <form class="#" action="register" method="POST">
+      <form class="#"  method="POST">
 
 <!--
 NOTE ..!! the reason of POST 404 err is because the action inside form tag was bad spelling..
@@ -90,10 +90,11 @@ Pffffff >_<
 
           {{ form.hidden_tag() }}
 
+
         <div class="input_loggin_box">
           {# {{ form.email }} #}
 
-          <label>{{ form.email(placeholder="Email") }}<!--<input type="text" placeholder="Email" name="Email" value="">--></label>
+          <label>{{ form.email(placeholder="Type your new email adress") }}<!--<input type="text" placeholder="Email" name="Email" value="">--></label>
         {% if form.email.errors %}
         <div class="Field_is_not_matching">
         {% for error in form.email.errors %}
@@ -114,14 +115,11 @@ Pffffff >_<
    {{ form.submit }} <!-- <input type="submit" value="Submit">-->
         </div>
 
-        <p><a href="{{ url_for('login') }}">Back to your home page</a></p>
+        <p><a class="after_update_back_tohome" href="{{ url_for('login') }}">Back to your home page</a></p>
 
       </form>
-  <div class="loggin_box">
-</div>
     </div>
-
-
+</div>
 
   </main>
 

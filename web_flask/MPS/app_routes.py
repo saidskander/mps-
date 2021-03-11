@@ -103,14 +103,21 @@ def setting():
     return render_template('setting.html', title='Settings')
 
 
-@app.route("/email")
+@app.route("/email", methods=["GET", "POST"])
 @login_required
 def email():
     form = UpdateEmailForm()
+    if form.validate_on_submit():
+        current_user.email = form.email.data
+        db.session.commit()
+        flash('Your email has been updated!')
+        return redirect(url_for('email'))
+    elif request.method == 'Get':
+        form.email.data = current_user.email
     return render_template('email.html', title='Settings', form=form)
 
 
-@app.route("/username")
+@app.route("/username", methods=["GET", "POST"])
 @login_required
 def username():
     form = UpdateUsernameForm()
