@@ -121,4 +121,11 @@ def email():
 @login_required
 def username():
     form = UpdateUsernameForm()
+    if form.validate_on_submit():
+        current_user.username = form.username.data
+        db.session.commit()
+        flash('Your username has been updated!')
+        return redirect(url_for('username'))
+    elif request.method == 'Get':
+        form.username.data = current_user.username
     return render_template('username.html', title='Settings', form=form)

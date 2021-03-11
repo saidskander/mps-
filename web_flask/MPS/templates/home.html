@@ -26,6 +26,17 @@
     <span style="--i:20;"></span>
     </div>
 </section>
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+ {% if messages  %}
+  {% for category, message in messages  %}
+   <div class="home_login_alert">
+    {{ message }}
+   </div>
+  {% endfor %}
+ {% endif %}
+{% endwith %}
+
 {% for post in posts %}        
         <article class="main_box">
           <!--content-article-->

@@ -9,9 +9,12 @@
   <title>MPS</title>
   {% endif %}
 <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{ url_for('static', filename='update_account.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='setting.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
 </head>
@@ -69,24 +72,62 @@
 -->
   </header>
 
+<main>
+    <div class="update_main_box">
+      <h1>Username  Update</h1>
+  <div class="update_box">
+
+<p class="current_email_adress">Your current username adress is: <p2 class="current_settings_info"> {{ current_user.username }}</p2> </p>
+
+      <form class="#"  method="POST">
+
+<!--
+NOTE ..!! the reason of POST 404 err is because the action inside form tag was bad spelling..
+I added .html [action="register.html"] and
+it should be [action="register"] without adding ".html"
+Pffffff >_<
+-->
+
+          {{ form.hidden_tag() }}
 
 
-  <main>
-{# <!-- {% for post in posts %} --> 
-<!-- <div class=""> -->
-<!-- <h1>{{ post.title }}</h1>
-<p>By {{ post.author }} on {{ post.date_posted }}</p>
-<p>{{ post.content }}</p> -->
-<!--</div>-->
-<!-- {% endfor %} --> #}
-<div>
-{% block content %}{% endblock %}
+        <div class="input_loggin_box">
+          {# {{ form.username }} #}
+
+          <label>{{ form.username(placeholder="Type your new email adress") }}<!--<input type="text" placeholder="Email" name="Email" value="">--></label>
+        {% if form.username.errors %}
+        <div class="Field_is_not_matching">
+        {% for error in form.username.errors %}
+         <span>{{ error }}<span>
+        {% endfor %}
+        </div>
+        {% else %}
+        {{ username }}
+        {% endif %}
+
+        <img class="user_lock_png" src="{{ url_for('static', filename='img/user.png') }}" alt="user">
+        </div>
+
+
+<!--        <label class="remember_me"><input type="checkbox"> Remember me</label>-->
+        <div class="input_loggin_box">
+
+   {{ form.submit }} <!-- <input type="submit" value="Submit">-->
+        </div>
+
+        <p><a class="after_update_back_tohome" href="{{ url_for('login') }}">Back to your home page</a></p>
+
+      </form>
+    </div>
 </div>
 
   </main>
+
   <footer id="footer">
 
   </footer>
+
+
 </body>
 
 </html>
