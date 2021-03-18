@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 from flask_wtf import FlaskForm
+from flask_wtf.file import FileField, FileAllowed
 from wtforms import StringField, BooleanField
 from wtforms import PasswordField, SubmitField
 from wtforms.validators import DataRequired
@@ -93,3 +94,8 @@ class UpdateUsernameForm(FlaskForm):
         user = User.query.filter_by(username=username.data).first()
         if user:
             raise ValidationError('Username is taken')
+
+
+class UpdateProfilePicForm(FlaskForm):
+    picture = FileField("Update Profile Picture", validators=[FileAllowed(['jpg', 'png'])])
+    submit = SubmitField("Update")

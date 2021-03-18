@@ -12,12 +12,20 @@
     <span style="--i:6;"></span>
     <span style="--i:7;"></span>
     <span style="--i:8;"></span>
-    <span style="--i:9;"></span>
-    <span style="--i:10;"></span>
-    <span style="--i:11;"></span>
-    <span style="--i:12;"></span>
-    <span style="--i:13;"></span>
-    <span style="--i:14;"></span>
+<!-- 
+<span style="--i:9;"></span>
+<span style="--i:10;"></span>
+<span style="--i:11;"></span>
+<span style="--i:12;"></span>
+<span style="--i:13;"></span>
+<span style="--i:14;"></span>
+-->
+    <span style="--i:8.5;"></span>
+    <span style="--i:8.7;"></span>
+    <span style="--i:8.9;"></span>
+   <span style="--i:14.5;"></span>
+    <span style="--i:14.7;"></span>
+    <span style="--i:14.9;"></span>
     <span style="--i:15;"></span>
     <span style="--i:16;"></span>
     <span style="--i:17;"></span>
@@ -26,6 +34,22 @@
     <span style="--i:20;"></span>
     </div>
 </section>
+       <form method="POST" action="" enctype="multipart/form-data">
+
+            {{ form.hidden_tag() }}
+<div>
+    <div class="profile_dropdown">
+      <div>{{ form.submit(class="profile_dropbtn") }}</div>
+<div>
+      <div>{{ form.picture(class="profile_dropbtn") }}</div>
+</div>
+</div>
+                    {% if form.picture.errors %}
+                        {% for error in form.picture.errors %}
+                            <span class="home_login_alert">{{ error }}</span></br>
+                        {% endfor %}
+                    {% endif %}
+  </div>
 
 {% with messages = get_flashed_messages(with_categories=true) %}
  {% if messages  %}
@@ -50,5 +74,6 @@
             <p class="post">{{ post.content }}</p>
          <!--</div>-->
         </article>
+</form>
     {% endfor %}
 {% endblock content %}

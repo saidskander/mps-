@@ -1,14 +1,17 @@
 .main_box{
 margin-left: 32.9%;
 color: white;
-width: 660px;
-height: 480px;
+width: 670px;
+height: 180px;
 display: inline-block;
 background:rgba(31, 32, 38, 0.9);
 border-right: 6px;
 box-shadow: 0 5px 35px rgba(0,0,0,0.5);
 margin-bottom: 15px;
-margin-top: 15px;
+margin-top: 50px;
+padding-top:20px;
+padding:30px;
+border-radius:25px;
 }
 
 
@@ -19,6 +22,8 @@ margin-top: 15px;
   min-height: 300px;
   margin-left: 50%;
   margin-right: 50%;
+  padding-top:50px;
+  padding-bottom:80px;
   background: #042104;
   animation: cercle_animation 10s linear infinite;
 }
@@ -39,6 +44,8 @@ margin-top: 15px;
   position: relative;
   height: 233px;
   width: 233px;
+/*skewY*/
+ transform: skewY(30deg);
 }
 .section_cercle .cercle_effect span{
   position: absolute;
@@ -53,8 +60,8 @@ margin-top: 15px;
   position: absolute;
   top: 0;
   left: 0;
-  width: 15px;
-  height: 15px;
+  width: 50px;
+  height: 4px;
   border-radius: 50%;
   background: #00ff0a;
   box-shadow: 0 0 10px #00ff0a,
@@ -72,7 +79,8 @@ animation-delay: calc(0.1s * var(--i));
  {
    transform: scale(1);
  }
- 80%,100%
+/*80%,100%*/
+ 101%,100%
  {
    transform: scale(0)
  }
@@ -171,3 +179,59 @@ box-sizing: border-box;
 align-items: center;
 
 }
+
+/* this is clickablevprofile picture */
+.profile_dropbtn{
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: white;
+  height: 60px;
+  width: 100px;
+  padding: 16px;
+  font-size: 16px;
+
+  cursor: pointer;
+  margin-left: 64.5vh;
+  margin-top: -140px;
+
+  border: none;
+    outline: none;
+
+}
+
+.profile_dropbtn:hover, .profile_dropbtn:focus {
+  background-color: rgba(255, 255, 255, 0.1);
+
+}
+
+.profile_dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.profile_dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 260px;
+  text-align: center;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  margin-left: 87.5vh;
+  margin-top: -197px;
+}
+
+.profile_dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.profile_dropdown a:hover {background-color: #ddd;}
+
+.profile_show {display: block;}
+
+/* end of clickablevprofile picture */
+

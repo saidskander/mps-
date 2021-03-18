@@ -1,9 +1,11 @@
 #!/usr/bin/python3
-from MPS.forms import RegistrationForm, LoginForm, email_validator, UpdateEmailForm, UpdateUsernameForm
+import os
+from MPS.forms import RegistrationForm, LoginForm, email_validator, UpdateEmailForm, UpdateUsernameForm, UpdateProfilePicForm
 from flask import render_template, url_for, flash, redirect, request
 from MPS.models import User, Post
 from wtforms.validators import email
 import email_validator
+import secrets
 from MPS import app, db, bcrypt
 from flask_login import login_user, current_user, logout_user, login_required
 
@@ -24,14 +26,30 @@ posts = [
 ]
 
 
-@app.route("/")
-@app.route("/home")
+def save_picture(form_picture):
+    random_hex = secrets.token_hex(8)
+    _, f_ext = os.path.splitext(form_picture.filename)
+    picture_fn = random_hex + f_ext
+    picture_path = os.path.join(app.root_path, 'static/profile_img', picture_fn)
+    form_picture.save(picture_path)
+
+
+    return picture_fn
+
+
+@app.route("/home", methods=["GET", "POST"])
 @login_required
 def home():
-    """there//"""
+    form = UpdateProfilePicForm()
+    if form.validate_on_submit():
+        if form.picture.data:
+            picture_file = save_picture(form.picture.data)
+            current_user.image_file = picture_file
+        db.session.commit()
+        flash("Your account updated")
+        return redirect(url_for('home'))
     image_file = url_for('static', filename="profile_img/" + current_user.image_file)
-    """there//"""
-    return render_template('home.html', posts=posts, image_file=image_file)
+    return render_template('home.html', posts=posts, image_file=image_file, form=form)
 
 
 
@@ -129,3 +147,8 @@ def username():
     elif request.method == 'Get':
         form.username.data = current_user.username
     return render_template('username.html', title='Settings', form=form)
+
+@app.route("/")
+@app.route("/landing")
+def landing():
+    return render_template('landing.html', title='landing')
