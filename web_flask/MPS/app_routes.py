@@ -46,7 +46,7 @@ def home():
             picture_file = save_picture(form.picture.data)
             current_user.image_file = picture_file
         db.session.commit()
-        flash("Your account updated")
+        flash("Your Picture has been updated")
         return redirect(url_for('home'))
     image_file = url_for('static', filename="profile_img/" + current_user.image_file)
     return render_template('home.html', posts=posts, image_file=image_file, form=form)
