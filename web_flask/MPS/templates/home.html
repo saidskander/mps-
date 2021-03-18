@@ -1,9 +1,9 @@
 {% extends "layout.html" %}
 {% block content %}
 <section class="section_cercle">
-  <img class="rounded-circle" src="{{ image_file }}" >
+  <img class="rounded-circle" src="{{ image_file }}">
 <!--src="{{ url_for('static', filename='profile_img/default.png') }}"-->
-  <div class="cercle_effect">
+    <div class="cercle_effect">
     <span style="--i:1;"></span>
     <span style="--i:2;"></span>
     <span style="--i:3;"></span>
@@ -41,7 +41,7 @@
     <div class="profile_dropdown">
       <div>{{ form.submit(class="profile_dropbtn") }}</div>
 <div>
-      <div>{{ form.picture(class="profile_btn") }}</div>
+      <div><label for="fileUpload">{{ form.picture(class="profile_btn") }}</label> </div>
 </div>
 </div>
                     {% if form.picture.errors %}
