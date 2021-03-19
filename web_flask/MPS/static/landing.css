@@ -9,7 +9,7 @@
   position: relative;
   width: 100%;
   min-height: 100vh;
-  background: url(landing0.jpg);
+  background: url( 'img/landing0.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -84,13 +84,14 @@ header .ul_navigation li a:hover{
   letter-spacing: 1px;
 }
 .parrot{
-height: 730px;
+height: 750px;
 position: absolute;
 display: inline-block;
-margin-top: -210px;
+margin-top: -225px;
 margin-left: 900px;
 
 }
+/*my mistakes*/
 /*
 .shadow-line{
 background-color: white;
@@ -104,14 +105,19 @@ transform-origin: right ;
 transform: skewY(-30deg);
 
 }*/
+/*i will make it with photoshop later to save more space
++ fiving it background-attachment:fixed;*/
 span{
   position: absolute;
-
 height: 100%;
-  border-left: 118.5vh solid  transparent;
-  border-right: 73.9vh solid transparent;
-  border-bottom:   400px solid   rgba(0,0,0,0.3);
+
+  border-left: 116vh solid transparent;
+  border-right: 70.1vh solid transparent;
+  border-bottom:   430px solid  rgba(0,0,0,0.3);
+
 }
+/*i will make it with photoshop later to save more space
++ fiving it background-attachment:fixed;*/
 .second_shadow_line{
 
 content: '';
@@ -120,12 +126,164 @@ top:10px;
 bottom: 10px;
 width: 94.77%;
 height: 927px;
+margin-top: 20px;
 
 background: rgba(0,0,0,0.3);
 transform-origin: right;
 transform: skewY(30deg);
 }
-.main_main{
+.kitten{
+  position: relative;
+  margin-left: 87px;
+  height: 510px;
+  width: 430px;
+}
+.kitten_div{
+  margin-left: 55px;
+  position: absolute;
+  content: '';
+  margin-top: 20px;
+  height: 480px;
+  width: 480px;
+  background: rgba(0,0,0,0.1);
+  transform: skewY(0deg);
+  border-radius: 50px;
+}
+
+.dog{
+  position: relative;
+  margin-left: 87px;
+  height: 510px;
+  width: 410px;
+  margin-top: 160px;
+}
+.dog_div{
+  margin-left: 55px;
+  position: absolute;
+  content: '';
+  margin-top: 200px;
+  height: 480px;
+  width: 480px;
+  background: rgba(0,0,0,0.1);
+  transform: skewY(0deg);
+  border-radius: 50px;
+}
+/*
+.parallax {
+
+z-index: 1;
+    background: transparent;
+}
+.kitten{
+  z-index: 2;
+  position: relative;
+  height: 300px;
+  left:80%;
+}
+*/
+main{
+
+  background: rgb(237, 237, 237);
+  display: flex;
+  padding-bottom: 100px;
+
+}
+aside{
+  margin-left: 100px;
+  margin-top: 100px;
+width: 50%;
+
+  background-color: ;
+}
+.quotes{
+  background-color:;
+  padding-left: 100px;
+  padding-right: 100px;
+
+
+}
+.article1{
+    background-color: ;
+    margin-top: 250px;
+    font-size: 16px;
+    padding-top:20px;
+    padding-left: 30px;
+    padding-bottom: 140px;
+width: 800px;
+
+}
+.article2{
+   background-color: ;
+    margin-top: 50px;
+    font-size: 16px;
+    padding-top:20px;
+    padding-left: 30px;
+    padding-bottom: 20px;
+width: 800px;
+}
+
+footer{
+  color: #fff;
+  background-color: rgb(66, 66, 66);
+  text-align: center;
+  text-decoration: none;
+  font-size: 25px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+
+}
+.holberton{
+
+  text-decoration: none;
+  color: #fff;
+
+}
+.holberton:hover{
+  color: rgb(207, 75, 10);
+
+}
+.photos{
+  display: flex;
+  align-items: center;
+  padding-left: 14%;
+  background-color: #EDEDED;
+  padding-bottom: 100px;
+  padding-top: 100px
+}
+
+.women{
+  height: 500px;
+  width: 350px;
+border-radius: 15px;
+}
+.reader{
+  height: 500px;
+  width: 350px;
+    margin-left: 100px;
+    border-radius: 15px;
+}
+.footer_text{
+  height: 440px;
+  width: 340px;
+  font-size: 16px;
+  padding-right: 10px;
+  padding-left: 20px;
+  text-transform: capitalize;
+
+}
+.parallax {
+    min-height: 500px;
+    background: transparent;
+
+
+}
+.parallax2 {
+  border-radius: 50px;
+
+    min-height: 300px;
+    background: transparent;
+
 
 }
 

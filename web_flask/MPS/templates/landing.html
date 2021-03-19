@@ -1,81 +1,102 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>MPS</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="landing.css">
-  </head>
-  <body>
-<div class="main_header_box">
+
+<head>
+  <meta charset="utf-8">
+  <title>MPS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='landing.css') }}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script  src="{{ url_for('static', filename='parallax_effect.js') }}">
+
+  </script>
+
+</head>
+
+<body>
+  <div class="main_header_box">
     <section>
 
-<span class="shadow-line"></span>
+      <span class="shadow-line"></span>
 
-              <div class="second_shadow_line">
-              </div>
-    <header>
-      <a href="#" class="logo">My pet story</a>
-      <ul class="ul_navigation">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">5years</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Sign up</a></li>
-        <li><a href="{{ url_for('login') }}">Sign in</a></li>
-      </ul>
-    </header>
+      <div class="second_shadow_line">
+      </div>
+      <header>
+        <a href="#" class="logo">My pet story</a>
+        <ul class="ul_navigation">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">5years</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="{{ url_for('register') }}">Sign up</a></li>
+          <li><a href="{{ url_for('login') }}">Sign in</a></li>
+        </ul>
+      </header>
       <div class="content">
 
 
 
-        <img class="parrot" src="parrot.png" alt="Parrot">
+        <img class="parrot" src="{{url_for('static', filename='img/parrot.png')}}" alt="Parrot">
         <div class="contentbx">
           <h2>Share Your Pet </br> Share Your Story.</h2>
-<p>MPS will give you a large opportunity to expand your knowledge </br> by sharing your story with millions of users every day.</br>
-</br>Join today for free and share your experience with your family, friends, and all the world.</p>
+          <p>MPS will give you a large opportunity to expand your knowledge </br> by sharing your story with millions of users every day.</br>
+            </br>Join today for free and share your experience with your family, </br> friends, and all the world.</p>
         </div>
       </div>
+    </section>
+  </div>
+
+<main>
+
+<section class="quotes">
+
+
+  <article class="article1">
+    <h2>Avaibility</h2></br>
+    <p>MPS care alot about you and your pets, </br>  thats why we are here for you,  we are currently avaible </br>and working 24/7 for you to give you the best quality place you need.
+
+
+    <!--<div class="parallax" data-parallax="scroll" data-z-index="1"  data-image-src="landing1.png" >
+    </div>-->
+    </div>
+    </article>
+<div class="parallax2" data-parallax="scroll" data-z-index="1" data-image-src="{{url_for('static', filename='img/selfcare.jpg')}}"></div>
+    <article class="article2">
+        <h2>Share your pet</h2></br>
+      <p>If you’ve had the pleasure of loving a shelter dog, you know that the pups among us live in the moment. </br>They’re not sad about something that happened yesterday, and they’re not worried about what could happen tomorrow. The only thing our dogs know is that today, they’re loved (and bacon is delicious).</br>
+      <!--<div class="parallax" data-parallax="scroll" data-z-index="1"  data-image-src="landing1.png" >
+      </div>-->
+        </br>Join today for free and share your experience with your family, friends, and all the world.MPS will give you a large opportunity to expand your knowledge </br> by sharing your story with millions of users every day.</br>
+        </br>Join today for free and share your experience with your family, friends, and all the world.</p>
+      </div>
+      </article>
+
+
+
   </section>
-</div>
-<div class="main_main">
-<p>MPS will give you a large opportunity to expand your knowledge </br> by sharing your story with millions of users every day.</br>
-</br>Join today for free and share your experience with your family, friends, and all the world.MPS will give you a large opportunity to expand your knowledge </br> by sharing your story with millions of users every day.</br>
-</br>Join today for free and share your experience with your family, friends, and all the world.MPS will give you a large opportunity to expand your knowledge </br> by sharing your story with millions of users every day.</br>
-</br>Join today for free and share your experience with your family, friends, and all the world.MPS will give you a large opportunity to expand your knowledge </br> by sharing your story with millions of users every day.</br>
-</br>Join today for free and share your experience with your family, friends, and all the world.MPS will give you a large opportunity to expand your knowledge </br> by sharing your story with millions of users every day.</br>
-</br>Join today for free and share your experience with your family, friends, and all the world.MPS will give you a large opportunity to expand your knowledge </br> by sharing your story with millions of users every day.</br>
-</br>Join today for free and share your experience with your family, friends, and all the world.MPS will give you a large opportunity to expand your knowledge </br> by sharing your story with millions of users every day.</br>
-</br>Join today for free and share your experience with your family, friends, and all the world.MPS will give you a large opportunity to expand your knowledge </br> by sharing your story with millions of users every day.</br>
-</br>Join today for free and share your experience with your family, friends, and all the world.MPS will give you a large opportunity to expand your knowledge </br> by sharing your story with millions of users every day.</br>
-</br>Join today for free and share your experience with your family, friends, and all the world.MPS will give you a large opportunity to expand your knowledge </br> by sharing your story with millions of users every day.</br>
-</br>Join today for free and share your experience with your family, friends, and all the world.MPS will give you a large opportunity to expand your knowledge </br> by sharing your story with millions of users every day.</br>
-</br>Join today for free and share your experience with your family, friends, and all the world.MPS will give you a large opportunity to expand your knowledge </br> by sharing your story with millions of users every day.</br>
-</br>Join today for free and share your experience with your family, friends, and all the world.MPS will give you a large opportunity to expand your knowledge </br> by sharing your story with millions of users every day.</br>
-</br>Join today for free and share your experience with your family, friends, and all the world.MPS will give you a large opportunity to expand your knowledge </br> by sharing your story with millions of users every day.</br>
-</br>Join today for free and share your experience with your family, friends, and all the world.MPS will give you a large opportunity to expand your knowledge </br> by sharing your story with millions of users every day.</br>
-</br>Join today for free and share your experience with your family, friends, and all the world.MPS will give you a large opportunity to expand your knowledge </br> by sharing your story with millions of users every day.</br>
-</br>Join today for free and share your experience with your family, friends, and all the world.MPS will give you a large opportunity to expand your knowledge </br> by sharing your story with millions of users every day.</br>
-</br>Join today for free and share your experience with your family, friends, and all the world.MPS will give you a large opportunity to expand your knowledge </br> by sharing your story with millions of users every day.</br>
-</br>Join today for free and share your experience with your family, friends, and all the world.MPS will give you a large opportunity to expand your knowledge </br> by sharing your story with millions of users every day.</br>
-</br>Join today for free and share your experience with your family, friends, and all the world.MPS will give you a large opportunity to expand your knowledge </br> by sharing your story with millions of users every day.</br>
-</br>Join today for free and share your experience with your family, friends, and all the world.MPS will give you a large opportunity to expand your knowledge </br> by sharing your story with millions of users every day.</br>
-</br>Join today for free and share your experience with your family, friends, and all the world.MPS will give you a large opportunity to expand your knowledge </br> by sharing your story with millions of users every day.</br>
-</br>Join today for free and share your experience with your family, friends, and all the world.MPS will give you a large opportunity to expand your knowledge </br> by sharing your story with millions of users every day.</br>
-</br>Join today for free and share your experience with your family, friends, and all the world.MPS will give you a large opportunity to expand your knowledge </br> by sharing your story with millions of users every day.</br>
-</br>Join today for free and share your experience with your family, friends, and all the world.MPS will give you a large opportunity to expand your knowledge </br> by sharing your story with millions of users every day.</br>
-</br>Join today for free and share your experience with your family, friends, and all the world.MPS will give you a large opportunity to expand your knowledge </br> by sharing your story with millions of users every day.</br>
-</br>Join today for free and share your experience with your family, friends, and all the world.MPS will give you a large opportunity to expand your knowledge </br> by sharing your story with millions of users every day.</br>
-</br>Join today for free and share your experience with your family, friends, and all the world.MPS will give you a large opportunity to expand your knowledge </br> by sharing your story with millions of users every day.</br>
-</br>Join today for free and share your experience with your family, friends, and all the world.MPS will give you a large opportunity to expand your knowledge </br> by sharing your story with millions of users every day.</br>
-</br>Join today for free and share your experience with your family, friends, and all the world.MPS will give you a large opportunity to expand your knowledge </br> by sharing your story with millions of users every day.</br>
-</br>Join today for free and share your experience with your family, friends, and all the world.MPS will give you a large opportunity to expand your knowledge </br> by sharing your story with millions of users every day.</br>
-</br>Join today for free and share your experience with your family, friends, and all the world.MPS will give you a large opportunity to expand your knowledge </br> by sharing your story with millions of users every day.</br>
-</br>Join today for free and share your experience with your family, friends, and all the world.MPS will give you a large opportunity to expand your knowledge </br> by sharing your story with millions of users every day.</br>
-</br>Join today for free and share your experience with your family, friends, and all the world.MPS will give you a large opportunity to expand your knowledge </br> by sharing your story with millions of users every day.</br>
-</br>Join today for free and share your experience with your family, friends, and all the world.MPS will give you a large opportunity to expand your knowledge </br> by sharing your story with millions of users every day.</br>
-</br>Join today for free and share your experience with your family, friends, and all the world.</p>
-</div>
-<footer></footer>
-  </body>
+<aside class="">
+  <div class="kitten_div">
+    </div>
+  <img class="kitten" src="{{url_for('static', filename='img/kitten.png')}}" alt="kitten">
+  <div class="dog_div">
+    </div>
+  <img class="dog" src="{{url_for('static', filename='img/dog.png')}}" alt="dog">
+
+
+
+  </aside>
+
+  </main>
+<div class="parallax" data-parallax="scroll" data-z-index="1" data-image-src="{{url_for('static', filename='img/blackcat.jpg')}}"></div>
+  <div class="photos">
+    <img class="women" src="{{url_for('static', filename='img/women.jpg')}}" alt="">
+    <p class="footer_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,  It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
+    <img class="reader" src="{{url_for('static', filename='img/reader.jpg')}}" alt="">
+    <p class="footer_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,  It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
+
+  </div>
+  <footer><p class="footer">Skander Amireche by <a class="holberton" href="https://www.holbertonschool.com/tn/en/campus_life/tunis">Holberton School</p></a>
+  </footer>
+</body>
+
 </html>
 
