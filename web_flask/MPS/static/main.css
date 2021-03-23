@@ -105,6 +105,7 @@ background:white;
   margin-left:20px;
   color: #2399f0;
   text-decoration:none; 
+  font-size:20px;
 }
 
 a.h2_heading_title:hover {
@@ -112,11 +113,18 @@ a.h2_heading_title:hover {
   text-decoration: none;
 }
 a.mr-2{
-  margin-left:20px;
+  position:absolute;
   text-decoration:none;
-  color:white;
+  font-size:30px;
+  color: #0f84dc;
+  margin:9px 20px;
+ 
 }
-
+.text-muted{
+  position:absolute;
+  margin-top:45px;
+  margin-left:20px;
+}
 .post {
   margin-left:20px;
   white-space: pre-line;
@@ -265,4 +273,33 @@ border-radius:50px;
 .profile_show {display: block;}
 
 /* end of clickablevprofile picture */
+
+.post_content{
+  position:relative;
+margin-left: 32.9%;
+color: white;
+width: 670px;
+height: 180px;
+display: inline-block;
+background:rgba(31, 32, 38, 0.9);
+border-right: 6px;
+box-shadow: 0 5px 35px rgba(0,0,0,0.5);
+margin-bottom: 15px;
+margin-top: 90px;
+margin-bottom:40px;
+padding-top:20px;
+border-radius:25px;
+}
+
+.article_circle_img{
+  margin-left:20px;
+  position:relative;
+  border-radius:50px;
+  height:70px;
+  display:inline-block;
+}
+
+.inlineblock_img_username{
+display:flex;
+}
 

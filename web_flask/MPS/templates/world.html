@@ -1,4 +1,56 @@
 {% extends "layout.html" %}
 {% block content %}
-        <h1>world</h1>
+<div class="post_content">
+      <form class="" method="POST">
+        {{ form.hidden_tag() }}
+        <div class="input_title_box">
+          <label>{{ form.title(placeholder="Write something") }}<!--<input type="text" placeholder="Email" name="Email" value="">--></label>
+        {% if form.title.errors %}
+        <div class="Field_is_not_matching">
+        {% for error in form.title.errors %}
+         <span>{{ error }}<span>
+        {% endfor %}
+        </div>
+        {% else %}
+        {{ title }}
+        {% endif %}
+        </div>
+
+
+        <div class="input_content_box">
+          <label>{{ form.content(placeholder="Write something") }}<!--<input type="text" placeholder="Email" name="Email" value="">--></label>
+        {% if form.content.errors %}
+        <div class="Field_is_not_matching">
+        {% for error in form.content.errors %}
+         <span>{{ error }}<span>
+        {% endfor %}
+        </div>
+        {% else %}
+        {{ content }}
+        {% endif %}
+        </div>
+        <div class="input_content_box">
+        {{ form.submit }}
+        </div>
+</div>
+
+
+
+{% for post in posts %}
+        <article class="main_box">
+          <!--content-article-->
+          <!--<div class="main_box">-->
+          <div class="inlineblock_img_username">
+          <img class="article_circle_img" src="{{ url_for('static', filename='profile_img/' + post.author.image_file) }}">
+            <div class="main_box_content">
+              <a class="mr-2" href="#">{{ post.author.username }}</a>
+              <small class="text-muted">{{ post.date_posted.strftime("%Y-%m-%d") }}</small>
+            </div>
+          </div>
+            <h2><a class="h2_heading_title" href="#">{{ post.title }}</a></h2>
+            <p class="post">{{ post.content }}</p>
+         <!--</div>-->
+        </article>
+{% endfor  %}
+      </form>
 {% endblock content %}

@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 import os
-from MPS.forms import RegistrationForm, LoginForm, email_validator, UpdateEmailForm, UpdateUsernameForm, UpdateProfilePicForm
+from MPS.forms import RegistrationForm, LoginForm, email_validator, PostForm, UpdateEmailForm, UpdateUsernameForm, UpdateProfilePicForm
 from flask import render_template, url_for, flash, redirect, request
 from MPS.models import User, Post
 from wtforms.validators import email
@@ -10,21 +10,6 @@ from MPS import app, db, bcrypt
 from flask_login import login_user, current_user, logout_user, login_required
 
 
-posts = [
-    {
-        "author": 'Skander amireche',
-        "title": 'mps post 1',
-        "content": 'First post content',
-        "date_posted": 'april 20, 2021'
-    },
-    {
-        "author": 'Skander amireche',
-        "title": 'mps post 2',
-        "content": 'Second post content',
-        "date_posted": 'april 21, 2021'
-    }
-]
-
 
 def save_picture(form_picture):
     random_hex = secrets.token_hex(8)
@@ -32,8 +17,6 @@ def save_picture(form_picture):
     picture_fn = random_hex + f_ext
     picture_path = os.path.join(app.root_path, 'static/profile_img', picture_fn)
     form_picture.save(picture_path)
-
-
     return picture_fn
 
 
@@ -41,6 +24,7 @@ def save_picture(form_picture):
 @login_required
 def home():
     form = UpdateProfilePicForm()
+    posts = Post.query.all()
     if form.validate_on_submit():
         if form.picture.data:
             picture_file = save_picture(form.picture.data)
@@ -52,10 +36,18 @@ def home():
     return render_template('home.html', posts=posts, image_file=image_file, form=form)
 
 
-
-@app.route("/world")
+@app.route("/world", methods=["GET", "POST"])
+@login_required
 def world():
-    return render_template('world.html', title='world')
+    form = PostForm()
+    posts = Post.query.all()
+    if form.validate_on_submit():
+        post = Post(title=form.title.data, content=form.content.data, author=current_user)
+        db.session.add(post)
+        db.session.commit()
+        flash("Your post created!")
+        return redirect(url_for('world'))
+    return render_template('world.html', posts=posts, form=form, title='world')
 
 
 @app.route("/freinds")
