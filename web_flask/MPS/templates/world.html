@@ -4,11 +4,11 @@
       <form class="" method="POST">
         {{ form.hidden_tag() }}
         <div class="input_title_box">
-          <label>{{ form.title(placeholder="Write something") }}<!--<input type="text" placeholder="Email" name="Email" value="">--></label>
+          <label>{{ form.title(placeholder="Write something", class="textarea_title") }}</label>
         {% if form.title.errors %}
         <div class="Field_is_not_matching">
         {% for error in form.title.errors %}
-         <span>{{ error }}<span>
+         <span>{{ error }}</span>
         {% endfor %}
         </div>
         {% else %}
@@ -18,11 +18,11 @@
 
 
         <div class="input_content_box">
-          <label>{{ form.content(placeholder="Write something") }}<!--<input type="text" placeholder="Email" name="Email" value="">--></label>
+          <label>{{ form.content(placeholder="Write something", class="textarea_content") }}<!--<input type="text" placeholder="Email" name="Email" value="">--></label>
         {% if form.content.errors %}
         <div class="Field_is_not_matching">
         {% for error in form.content.errors %}
-         <span>{{ error }}<span>
+         <span>{{ error }}</span>
         {% endfor %}
         </div>
         {% else %}
@@ -30,7 +30,7 @@
         {% endif %}
         </div>
         <div class="input_content_box">
-        {{ form.submit }}
+        {{ form.submit(class="share_content") }}
         </div>
 </div>
 

@@ -2,7 +2,6 @@
 margin-left: 32.9%;
 color: white;
 width: 670px;
-height: 180px;
 display: inline-block;
 background:rgba(31, 32, 38, 0.9);
 border-right: 6px;
@@ -11,9 +10,9 @@ margin-bottom: 15px;
 margin-top: 0px;
 margin-bottom:40px;
 padding-top:20px;
+padding-bottom:100px;
 border-radius:25px;
 }
-
 
 .section_cercle{
   display: flex;
@@ -102,12 +101,17 @@ background:white;
 }
 
 .h2_heading_title {
-  margin-left:20px;
+
   color: #2399f0;
   text-decoration:none; 
-  font-size:20px;
+  font-size:18px;
 }
-
+h2{
+  margin-top:30px;
+  margin-left:20px;
+  margin-right:20px;
+  word-wrap: break-word;
+}
 a.h2_heading_title:hover {
   color: #0f84dc;
   text-decoration: none;
@@ -125,9 +129,11 @@ a.mr-2{
   margin-top:45px;
   margin-left:20px;
 }
+
 .post {
   margin-left:20px;
-  white-space: pre-line;
+  word-wrap: break-word; 
+  margin-right:20px;
 }
 
 .article-img {
@@ -279,7 +285,7 @@ border-radius:50px;
 margin-left: 32.9%;
 color: white;
 width: 670px;
-height: 180px;
+height: 255px;
 display: inline-block;
 background:rgba(31, 32, 38, 0.9);
 border-right: 6px;
@@ -303,3 +309,69 @@ border-radius:25px;
 display:flex;
 }
 
+.textarea_content {
+
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #1C1D24;
+  border-radius: 4px;
+  font-size: 16px;
+  resize: none;
+
+  outline: none;
+  color: white;
+  width: 580px;
+  height: 100px;
+  display: inline-block;
+  background:#25262f;
+  border-right: 6px;
+  box-shadow: 0 5px 35px #1D1E25;
+  margin-bottom: 15px;
+  margin-top: 0px;
+  margin-left: 35px;
+  border-radius: 15px;
+}
+
+.textarea_title {
+
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #1C1D24;
+  border-radius: 4px;
+  font-size: 16px;
+  resize: none;
+  outline: none;
+  color: white;
+  width: 580px;
+  height: 50px;
+  display: inline-block;
+  background:#25262f;
+  border-right: 6px;
+  box-shadow: 0 5px 35px #1D1E25;
+  margin-bottom: 15px;
+  margin-top: 0px;
+  margin-left: 35px;
+  border-radius: 15px;
+}
+
+.share_content {
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #1C1D24;
+  border-radius: 4px;
+  font-size: 16px;
+  resize: none;
+  outline: none;
+  color: white;
+  width: 580px;
+  height: 50px;
+  display: inline-block;
+  background:#25262f;
+  border-right: 6px;
+  box-shadow: 0 5px 35px #1D1E25;
+  margin-bottom: 15px;
+  margin-top: 0px;
+  margin-left: 35px;
+  border-radius: 15px;
+ cursor:pointer;
+}
