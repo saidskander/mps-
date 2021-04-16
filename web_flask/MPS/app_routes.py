@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 import os
 from MPS.forms import RegistrationForm, LoginForm, email_validator, PostForm, UpdateEmailForm, UpdateUsernameForm, UpdateProfilePicForm
-from flask import render_template, url_for, flash, redirect, request
+from flask import render_template, url_for, flash, abort, redirect, request
 from MPS.models import User, Post
 from wtforms.validators import email
 import email_validator
@@ -24,7 +24,9 @@ def save_picture(form_picture):
 @login_required
 def home():
     form = UpdateProfilePicForm()
-    posts = Post.query.all()
+    """this line is for making the posts by order"""
+    posts = Post.query.order_by(Post.date_posted.desc())
+    """this line query all the posts but not by order"""
     if form.validate_on_submit():
         if form.picture.data:
             picture_file = save_picture(form.picture.data)
@@ -40,14 +42,46 @@ def home():
 @login_required
 def world():
     form = PostForm()
-    posts = Post.query.all()
+    """this line is for making the posts by order"""
+    posts = Post.query.order_by(Post.date_posted.desc())
+    """this line query all the posts but not by order"""
+    """posts = Post.query.all()"""
     if form.validate_on_submit():
         post = Post(title=form.title.data, content=form.content.data, author=current_user)
         db.session.add(post)
         db.session.commit()
         flash("Your post created!")
         return redirect(url_for('world'))
-    return render_template('world.html', posts=posts, form=form, title='world')
+    return render_template('world.html', posts=posts, form=form, title='World')
+
+
+@app.route("/current_post_id/<int:post_id>")
+def current_post_id(post_id):
+    post = Post.query.get_or_404(post_id)
+    return render_template('current_post_id.html', post=post, title=post.title)
+
+
+@app.route("/current_post_id/<int:post_id>/update", methods=["GET", "POST"])
+@login_required
+def edit_post(post_id):
+    post = Post.query.get_or_404(post_id)
+    if post.author != current_user:
+        abort(403)
+    form = PostForm()
+    if form.validate_on_submit():
+        post.title = form.title.data
+        post.content = form.content.data
+        """no need db.session.add(post) becasue i already adedd them in the database"""
+        db.session.commit()
+        flash("Your post has been Edited")
+        return redirect(url_for('current_post_id', post_id=post.id))
+    elif request.method == 'GET':
+        form.title.data = post.title
+        form.content.data = post.content
+    return render_template('world.html',
+                           form=form,
+                           legend="Edit Post",
+                           title='Edit Post')
 
 
 @app.route("/freinds")

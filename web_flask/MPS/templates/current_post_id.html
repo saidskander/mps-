@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block content %}
+        <article class="main_box">
+          <!--content-article-->
+          <!--<div class="main_box">-->
+          <div class="inlineblock_img_username">
+          <img class="article_circle_img" src="{{ url_for('static', filename='profile_img/' + post.author.image_file) }}">
+            <div class="main_box_content">
+              <a class="mr-2" href="#">{{ post.author.username }}</a>
+              <small class="text-muted">{{ post.date_posted.strftime("%Y-%m-%d") }}</small>
+            </div>
+          </div>
+            <h2 class="h2_heading_title" > {{ post.title }}</a></h2>
+            <p class="post">{{ post.content }}</p>
+         <!--</div>-->
+        </article>
+{% endblock content %}

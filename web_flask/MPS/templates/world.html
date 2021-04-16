@@ -3,8 +3,10 @@
 <div class="post_content">
       <form class="" method="POST">
         {{ form.hidden_tag() }}
-        <div class="input_title_box">
-          <label>{{ form.title(placeholder="Write something", class="textarea_title") }}</label>
+   
+       <div class="input_title_box">
+     {{ legend }}   
+     <label>{{ form.title(placeholder="Write something", class="textarea_title") }}</label>
         {% if form.title.errors %}
         <div class="Field_is_not_matching">
         {% for error in form.title.errors %}
@@ -12,10 +14,9 @@
         {% endfor %}
         </div>
         {% else %}
-        {{ title }}
+        {{ title.label }}
         {% endif %}
         </div>
-
 
         <div class="input_content_box">
           <label>{{ form.content(placeholder="Write something", class="textarea_content") }}<!--<input type="text" placeholder="Email" name="Email" value="">--></label>
@@ -47,7 +48,7 @@
               <small class="text-muted">{{ post.date_posted.strftime("%Y-%m-%d") }}</small>
             </div>
           </div>
-            <h2><a class="h2_heading_title" href="#">{{ post.title }}</a></h2>
+            <h2><a class="h2_heading_title" href="{{ url_for('current_post_id', post_id=post.id) }}">{{ post.title }}</a></h2>
             <p class="post">{{ post.content }}</p>
          <!--</div>-->
         </article>
