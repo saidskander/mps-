@@ -35,7 +35,7 @@ class User(db.Model, UserMixin):
     posts = db.relationship('Post', backref="author", lazy=True)
     """ __repr__(self) this will prove how our object is printed after print it out"""
     def __repr__(self):
-        return f"User('{self.username}', '{self.email}', '{self.image_file}')"
+        return f"User('{self.username}', '{self.email}', '{self.image_file}', '{self.password}')"
 
 
 class Post(db.Model):

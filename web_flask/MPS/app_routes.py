@@ -24,9 +24,14 @@ def save_picture(form_picture):
 @login_required
 def home():
     form = UpdateProfilePicForm()
+    """after suffering long day this is how to order
+    only current user posts in home page"""
+    posts = Post.query.filter_by(author=current_user)\
+        .order_by(Post.date_posted.desc())
     """this line is for making the posts by order"""
-    posts = Post.query.order_by(Post.date_posted.desc())
+    """posts = Post.query.order_by(Post.date_posted.desc())"""
     """this line query all the posts but not by order"""
+    """posts = current_user.posts.order_by(Post.id.desc())"""
     if form.validate_on_submit():
         if form.picture.data:
             picture_file = save_picture(form.picture.data)
