@@ -31,7 +31,7 @@ def home():
     """this line is for making the posts by order"""
     """posts = Post.query.order_by(Post.date_posted.desc())"""
     """this line query all the posts but not by order"""
-    """posts = current_user.posts.order_by(Post.id.desc())"""
+    """posts = current_user.posts"""
     if form.validate_on_submit():
         if form.picture.data:
             picture_file = save_picture(form.picture.data)
