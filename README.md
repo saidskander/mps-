@@ -21,7 +21,7 @@ Flask-Framework powered jinja2-HTML5 Markdown.
 
 ## Tech
 
-Dillinger uses a number of open source projects to work properly:
+MPS uses a number of source to work properly:
 
 - [OS] - Ubuntu.
 - [ HTML5 ] - HTML enhanced for web apps!
