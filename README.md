@@ -2,7 +2,6 @@
 ## __MY_PET_STORY__
 
 MPS is a python3-flask framework designed blog for pet owners
-Dillinger is a cloud-enabled, mobile-ready, offline-storage compatible,
 Flask-Framework powered jinja2-HTML5 Markdown.
 
 - ✨Magic ✨
